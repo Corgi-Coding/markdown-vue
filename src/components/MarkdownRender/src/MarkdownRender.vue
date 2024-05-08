@@ -1,11 +1,18 @@
 <script setup lang="ts">
 import MarkdownIt, { Options } from 'markdown-it';
-import highlight from 'highlight.js';
+import hljs from 'highlight.js/lib/core';
+import javascript from 'highlight.js/lib/languages/javascript.js';
+import typescript from 'highlight.js/lib/languages/typescript.js';
+import shell from 'highlight.js/lib/languages/shell.js';
 import { computed, onMounted, ref, shallowRef, watch } from 'vue';
 
 defineOptions({
   name: 'MarkdownRender'
 });
+
+hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('typescript', typescript);
+hljs.registerLanguage('shell', shell);
 
 const props = withDefaults(
   defineProps<{
@@ -20,11 +27,11 @@ const props = withDefaults(
       linkify: true,
       break: true,
       highlight: function (str: string, lang: any) {
-        if (lang && highlight.getLanguage(lang)) {
+        if (lang && hljs.getLanguage(lang)) {
           try {
             return (
               '<pre class="hljs"><code>' +
-              highlight.highlight(lang, str, true).value +
+              hljs.highlight(lang, str, true).value +
               '</code></pre>'
             );
             // eslint-disable-next-line no-empty
@@ -33,7 +40,7 @@ const props = withDefaults(
 
         return (
           '<pre class="hljs"><code>' +
-          highlight.highlight('js', str, true).value +
+          hljs.highlight('javascript', str, true).value +
           '</code></pre>'
         ); // Use additional default escaping
       }
