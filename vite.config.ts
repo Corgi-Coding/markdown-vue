@@ -19,7 +19,7 @@ export default defineConfig({
     outDir: 'lib',
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'ScreenBox',
+      name: 'MarkdownVue',
       fileName: 'index'
     },
     rollupOptions: {

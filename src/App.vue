@@ -1,30 +1,26 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue';
+import { ref } from 'vue';
+import MarkdownEditor from './components/MarkdownEditor/index';
+import MarkdownRender from './components/MarkdownRender/index';
+
+const textValue = ref(`> *corgicoding: Edit here...*
+`);
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div style="width: 100%; height: 100%; position: relative; display: flex">
+    <div style="width: 50%; height: 100%; position: relative">
+      <MarkdownEditor
+        v-model="textValue"
+        :options="{
+          fontSize: 16,
+          theme: 'vs'
+        }"
+      ></MarkdownEditor>
+    </div>
+
+    <MarkdownRender v-model="textValue"></MarkdownRender>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<style></style>

@@ -1,8 +1,15 @@
 {
-  "name": "npm-libs-template",
-  "private": true,
-  "version": "0.0.1",
+  "name": "@corgicoding/markdown-vue",
+  "version": "1.0.6",
+  "description": "Vue components based on monaco and markdown-it",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Corgi-Coding/markdown-vue.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Corgi-Coding/markdown-vue/issues"
+  },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "vite",
@@ -10,12 +17,48 @@
     "preview": "vite preview",
     "prepare": "husky install"
   },
+  "keywords": [
+    "editor",
+    "markdown",
+    "vue",
+    "markdown-vue",
+    "markdown-it",
+    "monaco",
+    "corgicoding",
+    "Corgi Coding",
+    "Corgi-Coding",
+    "corgi coding",
+    "corgi-coding"
+  ],
+  "author": "Charles Chan",
+  "license": "Apache 2.0",
+  "main": "./lib/index.js",
+  "module": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "types": "./lib/index.d.ts",
+  "typings": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.cjs"
+    },
+    "./lib/style.css": "./lib/style.css",
+    "./types.d": "./lib/types.d.ts"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
   "dependencies": {
-    "vue": "^3.4.21"
+    "highlight.js": "^11.9.0",
+    "markdown-it": "^14.1.0",
+    "monaco-editor": "^0.48.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@types/markdown-it": "^14.1.1",
     "@types/node": "^20.12.10",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
     "@typescript-eslint/parser": "^7.8.0",
@@ -27,6 +70,7 @@
     "eslint-plugin-vue": "^9.25.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
+    "sass": "^1.77.0",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vite-plugin-dts": "^3.9.1",
