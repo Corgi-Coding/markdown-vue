@@ -1,7 +1,8 @@
 {
-  "name": "@corgicoding/markdown-vue",
-  "version": "1.0.7",
-  "description": "Vue components based on monaco and markdown-it",
+  "name": "@corgicoding/markdown-editor",
+  "version": "0.0.1",
+  "private": false,
+  "description": "Vue components based on monaco",
   "type": "module",
   "repository": {
     "type": "git",
@@ -19,10 +20,7 @@
   },
   "keywords": [
     "editor",
-    "markdown",
     "vue",
-    "markdown-vue",
-    "markdown-it",
     "monaco",
     "corgicoding",
     "Corgi Coding",
@@ -44,6 +42,7 @@
       "import": "./lib/index.js",
       "require": "./lib/index.cjs"
     },
+    "./style.css": "./lib/style.css",
     "./lib/style.css": "./lib/style.css",
     "./types.d": "./lib/types.d.ts"
   },
@@ -51,8 +50,6 @@
     "vue": "^3.0.0"
   },
   "dependencies": {
-    "highlight.js": "^11.9.0",
-    "markdown-it": "^14.1.0",
     "monaco-editor": "^0.48.0"
   },
   "devDependencies": {

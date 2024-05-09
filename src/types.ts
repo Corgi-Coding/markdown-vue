@@ -31,4 +31,4 @@ export interface EditorAction {
   handler: () => void;
 }
 
-export type { Options as MarkdownItOptions } from 'markdown-it';
+// export type { Options as MarkdownItOptions } from 'markdown-it';
