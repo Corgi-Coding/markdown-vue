@@ -1,6 +1,6 @@
 {
   "name": "@corgicoding/markdown-render",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Vue components based on markdown-it",
   "type": "module",
   "repository": {
@@ -51,7 +51,6 @@
     "vue": "^3.0.0"
   },
   "dependencies": {
-    "highlight.js": "^11.9.0",
     "markdown-it": "^14.1.0"
   },
   "devDependencies": {
