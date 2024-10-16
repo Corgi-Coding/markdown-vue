@@ -5,26 +5,10 @@
  */
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
 import EditorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker';
-// 语言 node_modules/monaco-editor/esm/metadata.js
-// json
-// import 'monaco-editor/esm/vs/language/json/monaco.contribution';
-// import JsonWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker';
-// // js
-// import 'monaco-editor/esm/vs/basic-languages/javascript/javascript.contribution';
-// // ts
-// import 'monaco-editor/esm/vs/basic-languages/typescript/typescript.contribution';
-// import 'monaco-editor/esm/vs/language/typescript/monaco.contribution';
-// import TSWorker from 'monaco-editor/esm/vs/language/typescript/ts.worker?worker';
 import 'monaco-editor/esm/vs/basic-languages/markdown/markdown.contribution';
 
 self.MonacoEnvironment = {
   getWorker() {
-    // if (label === 'json') {
-    //   return new JsonWorker();
-    // }
-    // if (label === 'typescript' || label === 'javascript') {
-    //   return new TSWorker();
-    // }
     return new EditorWorker();
   }
 };
@@ -153,7 +137,7 @@ defineExpose({
   </div>
 </template>
 
-<style>
+<style scoped>
 .cc__monaco-container,
 .cc__monaco-editor {
   width: 100%;

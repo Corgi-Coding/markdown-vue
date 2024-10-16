@@ -80,7 +80,7 @@ defineExpose({
   </div>
 </template>
 
-<style>
+<style scoped>
 .cc__markdown-render,
 .cc__markdown-render__container {
   width: 100%;
